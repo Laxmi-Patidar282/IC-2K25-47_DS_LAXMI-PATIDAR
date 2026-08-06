@@ -1,0 +1,31 @@
+
+#include <iostream>
+using namespace std;
+int main() {
+    int rows,colms;
+    cout<<"Enter no. of rows:"<<endl;
+    cin>>rows;
+    cout<<"Enter no. of colmumn:"<<endl;
+    cin>>colms;
+    int arr[10][10];
+    cout<<"Enter elements of array:"<<endl;
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<colms;j++){
+            cin>>arr[i][j];
+        }
+    }
+    //Assume the first element is smallest
+    int smallest=arr[0][0];
+    for(int i=0;i<rows;i++){
+    for(int j=0;j<colms;j++){
+        if(arr[i][j]<smallest){
+            smallest=arr[i][j];
+        }
+    }
+    }
+    cout<<"Smallest element="<<smallest<<endl;
+    
+
+
+    return 0;
+}
