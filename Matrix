@@ -1,0 +1,129 @@
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int choice;
+    int A[10][10],B[10][10],C[10][10];
+    int r1,c1,r2,c2;
+    do
+    {
+        cout<<"\n=========MATRIX CALCULATOR=========\n";
+        cout<<"1.Matrix Addition\n";
+        cout<<"2.Matrix Multiplication\n";
+        cout<<"3.Matrix Transpose\n";
+        cout<<"4. Determinant (2x2 Matrix)\n";
+        cout<<"5. Exit\n";
+        cout<< "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice){
+            case 1:
+            {
+                cout<<"\n Enter no. of rows and columns:";
+                cin>>r1>>c1;
+                cout<<"\n Enter Elements of Matrix A:\n";
+                for(int i=0;i<r1;i++){
+                for(int j=0;j<c1;j++){
+                    cin>>A[i][j];
+                }
+                }
+                cout<<"\n Enter ELements of Matrix B:\n";
+                for(int i=0;i<r2;i++){
+               for(int j=0;j<c2;j++){
+                   cin>>B[i][j];
+               }
+                }
+                cout<<"\n Result of Addition: /n";
+                for(int i=0;i<r1;i++){
+                for(int j=0;j<c1;j++){
+                    C[i][j]=A[i][j]+B[i][j];
+                    cout<<C[i][j]<<"\t";
+                }
+                cout<<endl;
+                }
+                break;
+            }
+            case 2:
+            {
+            cout<<"\n Enter rows and columns of Matrix A: ";
+            cin>>r1>>c1;
+            cout<<"\n Enter rows and column of Matrix B: ";
+            cin>>r2>>c2;
+            if(c1!=r2){
+       cout<<"\n Matrix Muliplication is not Possible.\n";
+            break;
+            }
+            cout<<"\n Enter elements of Matrix A: ";
+            for(int i=0;i<r1;i++){
+            for(int j=0;j<c1;j++){
+                cin>>A[i][j];
+            }
+            }
+            cout<<"\n Enter elements of Matrix B: ";
+            for(int i=0;i<r2;i++){
+            for(int j=0;j<c2;j++){
+                cin>>B[i][j];
+            }
+            }
+            for(int i=0;i<r1;i++){
+            for(int j=0;j<c2;j++){
+                C[i][j]=0;
+            for(int k=0;k<c1;k++){
+                C[i][j]+=A[i][k]*B[k][j];
+            }
+            }
+            }
+            cout<<"\n Result of Multiplication\n";
+            for(int i=0;i<r1;i++){
+            for(int j=0;j<c2;j++){
+             cout<<C[i][j]<<"\t";
+             cout<<endl;
+            }
+            break;
+            }
+           case 3:
+           {
+           cout<<"Enter no. of rows and coumns: ";
+           cin>>r1>>c1;
+           cout<<"\n Enter elements of Matrix:\n";
+           for(int i=0;i<r1;i++){
+           for(int j=0;j<c1;j++){
+               cin>>A[i][j];
+           }
+           }
+           cout<<"\n Transpose of Matrix:\n";
+           for(int i=0;i<c1;i++){
+           for(int j=0;j<r1;j++){
+               cout<<A[j][i]<<endl;
+           }
+           break;
+           }
+           }
+           case 4:
+           {
+               int det;
+               cout<<"\n Enter eleents of 2x2 Matrix: \n";
+               for(int i=0;i<2;i++){
+               for(int j=0;j<2;j++){
+                   cin>>A[i][j];
+               }
+               }
+               det= (A[0][0]*A[1][1])-(A[0][1]*A[1][0]);
+               cout<<" Determinant= "<<det<<endl;
+               break;
+           }
+           case 5:
+           {
+           cout<<"THANK YOU! Program Terminated."<<endl;
+           break;
+           default:
+           cout<<"Invalid choice! Please try again."<<endl;
+           }
+           
+           }
+           
+        }
+    }while(choice!=5);
+    return 0;
+}
