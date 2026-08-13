@@ -30,6 +30,17 @@ void pop(){
         top--;
     }
 }
+void display (){
+    if(top==-1){
+        cout<<"Stack is empty."<<endl;
+    }else{
+        cout<<"stack elements: ";
+        for(int i=top;i>=0;i--){
+            cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
+}
 };
 int main(){
     stack s;
@@ -40,6 +51,7 @@ int main(){
     s.push(50);
     s.push(60);
     s.pop();
+    s.display();
     return 0;
 }
 
