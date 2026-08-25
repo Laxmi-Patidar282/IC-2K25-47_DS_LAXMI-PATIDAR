@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+#define max 5
+int main(){
+    int queue[max]={10,20,30};
+    int front=0;
+    int rear=2;
+    //Enqueue
+    rear++;
+    queue[rear]=40;
+    cout<<"After Enqueue:"<<endl;
+    for(int i=front;i<=rear;i++){
+        cout<<queue[i]<<" ";
+    }
+    cout<<endl;
+        //Dequeue
+        front++;
+        cout<<"After Dequeue"<<endl;
+        for(int i=front;i<=rear;i++){
+       cout<<queue[i]<<" ";
+       return 0;
+        }
+    
+}
