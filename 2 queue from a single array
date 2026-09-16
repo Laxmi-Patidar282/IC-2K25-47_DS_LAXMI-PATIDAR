@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+#define max 10
+class TwoQueue{
+    int arr[max];
+    int front1,rear1;
+    int front2,rear2;
+    public:
+    TwoQueue(){
+    front1=rear1=-1;
+    front2=rear2=max;
+    }
+    void enqueue1(int value){
+        if(rear1+1==rear2){
+            cout<<"Queue is full"<<endl;
+            return;
+        }
+        if(front1==-1)
+            front1=0;
+        rear1++;
+        arr[rear1]=value;
+    }
+    void enqueue2(int value){
+        if(rear1 + 1 ==rear2){
+            cout<<"Queue is Full"<<endl;
+            return;
+        }
+        if(front2==max)
+            front2=max-1;
+        rear2--;
+        arr[rear2]=value;
+    }
+    void display()
+    {
+      cout<<"Queue 1:"<<endl;
+        for(int i=front1;i<=rear1;i++){
+          cout<<arr[i]<<" "<<endl; 
+        }
+        cout<<"Queue2:"<<endl;
+        for(int i=front2;i>=rear2;i--){
+            cout<<arr[i]<<" "<<endl;
+        }
+    }
+    };
+        int main(){
+        TwoQueue q;
+        q.enqueue1(10);
+        q.enqueue1(20);
+        q.enqueue1(30);
+        q.enqueue2(23);
+        q.enqueue2(34);
+        q.enqueue2(56);
+        q.display();
+        return 0;
+    }
+        
+    
