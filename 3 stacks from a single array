@@ -1,0 +1,78 @@
+#include <iostream>
+using namespace std;
+
+class ThreeStacks {
+    int arr[15];
+    int top1, top2, top3;
+
+public:
+    ThreeStacks() {
+        top1 = -1;
+        top2 = 4;
+        top3 = 9;
+    }
+
+    // Stack 1
+    void push1(int x) {
+        if (top1 < 4)
+            arr[++top1] = x;
+        else
+            cout << "Stack 1 is full\n";
+    }
+
+    void pop1() {
+        if (top1 >= 0)
+            cout << "Popped from Stack 1: " << arr[top1--] << endl;
+        else
+            cout << "Stack 1 is empty\n";
+    }
+
+    // Stack 2
+    void push2(int x) {
+        if (top2 < 9)
+            arr[++top2] = x;
+        else
+            cout << "Stack 2 is full\n";
+    }
+
+    void pop2() {
+        if (top2 >= 5)
+            cout << "Popped from Stack 2: " << arr[top2--] << endl;
+        else
+            cout << "Stack 2 is empty\n";
+    }
+
+    // Stack 3
+    void push3(int x) {
+        if (top3 < 14)
+            arr[++top3] = x;
+        else
+            cout << "Stack 3 is full\n";
+    }
+
+    void pop3() {
+        if (top3 >= 10)
+            cout << "Popped from Stack 3: " << arr[top3--] << endl;
+        else
+            cout << "Stack 3 is empty\n";
+    }
+};
+
+int main() {
+    ThreeStacks s;
+
+    s.push1(10);
+    s.push1(20);
+
+    s.push2(100);
+    s.push2(200);
+
+    s.push3(1000);
+    s.push3(2000);
+
+    s.pop1();
+    s.pop2();
+    s.pop3();
+
+    return 0;
+}
